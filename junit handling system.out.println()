@@ -1,0 +1,9 @@
+Sometimes you need to capture and compare the result of System.out.print()
+
+final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+public void testPrint(){
+    System.setout(new PrintStream(outContent));
+    mySong.print();
+    assertEquals("TITLE",outContent.toString());
+}
