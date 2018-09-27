@@ -1,0 +1,24 @@
+Here is your maven project structure
+classifier_project
+  src
+    main
+        java
+          juniarto
+            classifier
+              saturnclassifier.java
+    resources
+         classification
+            saturn_data_train.csv
+            
+ You want to read "saturn_data_train.csv" which reside in resources folder.
+      
+public class saturnclassifier {
+    public static void main(String[] args) throws IOException {
+        
+       ClassLoader classLoader = saturnclassifier.class.getClassLoader();
+       //SINCE ClassLoader classLoader = getClass().getClassLoader();GIVE ERROR!!!!
+       File file = new File(classLoader.getResource("classification/saturn_data_train.csv").getFile());
+       System.out.println(file.getAbsolutePath());
+    }
+}
+
